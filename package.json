@@ -1,0 +1,38 @@
+{
+  "name": "package-scan",
+  "version": "1.0.0",
+  "description": "an automated tool to scan yarn.lock file of a github repository of an organization for vulnerabilities",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "npmaudit": "npm install --package-lock-only && npm audit",
+    "check": "node index.js"
+  },
+  "author": "iampukar",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iampukar/package-scan.git"
+  },
+  "keywords": [
+    "supply chain",
+    "github advisory",
+    "packages"
+  ],
+  "homepage": "https://github.com/iampukar/package-scan#readme",
+  "bugs": {
+    "url": "https://github.com/iampukar/package-scan/issues"
+  },
+  "engines": {
+    "node": ">=18.14.2"
+  },
+  "files": [
+    "src",
+    "index.js"
+  ],
+  "devDependencies": {
+    "@yarnpkg/lockfile": "^1.1.0",
+    "dotenv": "^16.3.1",
+    "semver": "^7.5.3"
+  }
+}
