@@ -63,7 +63,9 @@ async function handleFileAnalysis(repoName, fileType, file, getFullPackages, acc
   );
 
   let jsonData = JSON.stringify(vulnerablePackages);
-  fs.writeFileSync(`issues/${repoName}.json`, jsonData);
+  if (jsonData !== '[]') {
+    fs.writeFileSync(`issues/${repoName}.json`, jsonData);
+  }
 
   let potentialIssuePackages = [];
 
